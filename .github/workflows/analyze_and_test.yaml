@@ -1,0 +1,12 @@
+name: analyze and test
+
+on: [pull_request, push]
+
+jobs:
+  test:
+    name: analyze and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+      - run: ./test_all.sh

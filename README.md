@@ -2,5 +2,6 @@
 
 # manual
 ## links
-[Git運用](./docs/git_operation/README.md)<br>
-[コーディング規約](./docs/coding/README.md)<br>
+- [Git運用](./docs/git_operation/README.md)
+- [コーディングルール](./docs/coding_rules/README.md)
+- [テストルール](./docs/test_rules/README.md)

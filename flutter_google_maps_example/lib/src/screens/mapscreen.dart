@@ -10,22 +10,47 @@ class MapScreen extends StatefulWidget {
 
 class MapScreenState extends State<MapScreen> {
   Completer<GoogleMapController> _controller = Completer();
+  final List<Marker> markers = [];
 
-  static final CameraPosition _kGooglePlex = CameraPosition(
+  @override
+  void initState() {
+    super.initState();
+    markers.add(
+      Marker(
+        markerId: MarkerId("hoge"),
+        draggable: false,
+        position: LatLng(35.4655618, 139.6220429),
+        onTap: () {},
+        infoWindow: InfoWindow(
+          title: "hoge",
+        ),
+      ),
+    );
+  }
+
+  static final CameraPosition _kYokohamaStation = CameraPosition(
     target: LatLng(35.4655618, 139.6220429),
-    zoom: 17,
+    zoom: 18,
   );
 
   Widget build(BuildContext context) {
     return new Scaffold(
       body: GoogleMap(
         mapType: MapType.normal,
-        initialCameraPosition: _kGooglePlex,
-        myLocationButtonEnabled: false,
+        initialCameraPosition: _kYokohamaStation,
+        myLocationEnabled: true,
+        myLocationButtonEnabled: true,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
         indoorViewEnabled: true,
+        markers: Set.from(markers),
+        onTap: (pos) {
+          Marker m = Marker(markerId: MarkerId("huga"), position: pos);
+          setState(() {
+            markers.add(m);
+          });
+        },
       ),
     );
   }

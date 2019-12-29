@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:rackle_client/theme/rackleTheme.dart';
+import '../theme/rackleTheme.dart';
+import './BottomNav/BottomMenuBar.dart';
 
 class App extends StatelessWidget {
   @override
@@ -9,19 +10,8 @@ class App extends StatelessWidget {
       title: 'らっくる',
       theme: rackleTheme,
       home: Scaffold(
-        appBar: AppBar(),
         body: Container(),
-        bottomNavigationBar: BottomNavigationBar(
-          items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              title: Text("Home")
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              title: Text('Settings'),
-          )],
-        ),
+        bottomNavigationBar: BottomMenuBar(),
       ),
     );
   }

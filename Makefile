@@ -1,7 +1,4 @@
-.PHONY:	install analyze test
-
-install:
-	flutter install
+.PHONY: analyze test
 
 analyze:
 	flutter analyze

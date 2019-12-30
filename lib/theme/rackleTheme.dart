@@ -51,14 +51,14 @@
     )
  ,
       alignedDropdown: false ,
-      buttonColor: Color( 0xffe0e0e0 ),
+      buttonColor: Colors.red,
       disabledColor: Color( 0x61000000 ),
       highlightColor: Color( 0x29000000 ),
       splashColor: Color( 0x1f000000 ),
       focusColor: Color( 0x1f000000 ),
       hoverColor: Color( 0x0a000000 ),
       colorScheme: ColorScheme(
-        primary: Color( 0xff24c195 ),
+        primary: Colors.red,
         primaryVariant: Color( 0xff188164 ),
         secondary: Color( 0xff28d7a6 ),
         secondaryVariant: Color( 0xff188164 ),
@@ -389,17 +389,17 @@
     ),
   ),
     iconTheme: IconThemeData(
-      color: Color( 0xdd000000 ),
+      color: Colors.red,
       opacity: 1,
       size: 24,
     ),
     primaryIconTheme: IconThemeData(
-      color: Color( 0xff000000 ),
+      color: Colors.red,
       opacity: 1,
       size: 24,
     ),
     accentIconTheme: IconThemeData(
-      color: Color( 0xff000000 ),
+      color: Colors.red,
       opacity: 1,
       size: 24,
     ),

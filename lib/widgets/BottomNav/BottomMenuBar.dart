@@ -1,37 +1,82 @@
 import 'package:flutter/material.dart';
 
-class BottomMenuBar extends StatelessWidget {
+class BottomMenuBar extends StatefulWidget {
+  @override
+  BottomMenuBarState createState() => BottomMenuBarState();
+}
+
+class BottomMenuBarState extends State<BottomMenuBar> {
+  int _menuIndex = 0;
+  TextStyle _textTheme() => Theme.of(context).textTheme.button;
+  Color _iconColor() => Theme.of(context).iconTheme.color;
+  Color _activeIconColor() => Theme.of(context).accentIconTheme.color;
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.map,
-            color: Color(0xFFB3BAAB),
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.map,
+              color: Color(0xFFB3BAAB),
+            ),
+            activeIcon: Icon(
+              Icons.map,
+              color: _activeIconColor(),
+            ),
+            title: Text(
+              'マップ',
+              style: _textTheme(),
+            ),
           ),
-          title: Text('マップ'),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.pin_drop,
-            color: Color(0xFFB3BAAB),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.pin_drop,
+              color: _iconColor(),
+            ),
+            activeIcon: Icon(
+              Icons.pin_drop,
+              color: _activeIconColor(),
+            ),
+            title: Text(
+              'ピン一覧',
+              style: _textTheme(),
+            ),
           ),
-          title: Text('ピン一覧'),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.notifications,
-            color: Color(0xFFB3BAAB),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.notifications,
+              color: _iconColor(),
+            ),
+            activeIcon: Icon(
+              Icons.notifications,
+              color: _activeIconColor(),
+            ),
+            title: Text(
+              'お知らせ',
+              style: _textTheme(),
+            ),
           ),
-          title: Text('お知らせ'),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.settings,
-            color: Color(0xFFB3BAAB),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.settings,
+              color: _iconColor(),
+            ),
+            activeIcon: Icon(
+              Icons.settings,
+              color: _activeIconColor(),
+            ),
+            title: Text(
+              '設定',
+              style: _textTheme(),
+            ),
           ),
-          title: Text('設定'),
-        ),
-      ],
-      currentIndex: 1,
-      fixedColor: Colors.white,
-    );
+        ],
+        currentIndex: _menuIndex,
+        onTap: (index) {
+          setState(() {
+            _menuIndex = index;
+          });
+        });
   }
 }

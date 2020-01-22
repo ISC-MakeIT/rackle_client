@@ -5,12 +5,7 @@ import '../theme/rackleTheme.dart';
 //import './routes/routes.dart';
 import './BottomNav/BottomMenuBar.dart';
 
-class Splashscreen extends StatefulWidget {
-  @override
-  SplashscreenState createState() => SplashscreenState();
-}
-
-class SplashscreenState extends State<Splashscreen> {
+class Splashscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,16 +27,9 @@ class SplashscreenState extends State<Splashscreen> {
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return
-        // MaterialApp(
-        // title: 'らっくる',
-        // theme: rackleTheme,
-        //routes: routes,
-        // home:
-        Scaffold(
+    return Scaffold(
       body: Container(),
       bottomNavigationBar: BottomMenuBar(),
-      // ),
     );
   }
 }

@@ -9,21 +9,45 @@ class ConfigurationViews extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          pulldownList('性別', sex),
-          // pulldownList('生年月日', old),
-          pulldownList('ご利用環境', used),
-          pulldownList('介助者', caregiver),
-          pulldownList('シニアモード', senior),
-          postConfig(context),
-          supportButtons('アプリのご利用方法'),
-          supportButtons('お問い合わせ'),
-        ],
+    return SingleChildScrollView(
+      child: Container(
+        child: Column(
+          children: <Widget>[
+            heading('ユーザー設定', context, 0),
+            pulldownList('性別', sex),
+            // pulldownList('生年月日', old),
+            pulldownList('ご利用環境', used),
+            pulldownList('介助者', caregiver),
+            pulldownList('シニアモード', senior),
+            postConfig(context),
+            heading('サポート', context, 1),
+            supportButtons('アプリのご利用方法', context),
+            supportButtons('お問い合わせ', context),
+          ],
+        ),
       ),
     );
   }
+}
+
+heading(String _name, context, num) {
+  final List<double> _margin = [44.0, 24.0];
+
+  return Container(
+    width: MediaQuery.of(context).size.width * 0.90,
+    height: 56.0,
+    margin: EdgeInsets.only(
+      top: _margin[num],
+    ),
+    child: Text(
+      _name,
+      style: TextStyle(
+        fontSize: 22.62,
+        fontWeight: FontWeight.bold,
+      ),
+      textAlign: TextAlign.left,
+    ),
+  );
 }
 
 pulldownList(String _name, List<String> _list) {
@@ -95,16 +119,24 @@ postConfig(context) {
   );
 }
 
-supportButtons(String _name) {
+supportButtons(String _name, context) {
   return Container(
+    width: MediaQuery.of(context).size.width,
+    height: 64.0,
     decoration: const BoxDecoration(
       border: Border(
         bottom: BorderSide(width: 0.5, color: Color(0xFFE5E8E0)),
       ),
     ),
-    child: FlatButton(
-      child: Text(_name),
-      onPressed: () {},
+    child: InkWell(
+      onTap: () {},
+      child: Padding(
+        padding: EdgeInsets.only(top: 19.0, left: 21.0, bottom: 19.0),
+        child: Text(
+          _name,
+          textAlign: TextAlign.left,
+        ),
+      ),
     ),
   );
 }

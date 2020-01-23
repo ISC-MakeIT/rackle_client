@@ -5,5 +5,36 @@ class NotificationsPage extends StatefulWidget {
   NotificationsPageState createState() => NotificationsPageState();
 }
 
-class NotificationsPageState extends NotificationsPageState<NotificationsPage> {
+class NotificationsPageState extends State<NotificationsPage> {
+  Color _iconColor() => Theme.of(context).iconTheme.color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('お知らせ'),
+      ),
+      body: Center(
+        child: ListView.builder(
+        itemCount: List.length,
+        itemBuilder: (context, int index) {
+          return Container(
+            decoration: new BoxDecoration(
+            border: new Border(
+            bottom: new BorderSide(color: _iconColor()),
+              ),
+            ),
+            child :ListTile(
+              title: Text(List[index],),
+              subtitle: Text(List[index],),
+              trailing: Icon(Icons.navigate_next,
+                color: _iconColor(),),
+            ),
+          );
+         },
+        ),
+    ),
+
+    );
+  }
 }

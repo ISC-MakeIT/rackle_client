@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class configurationViews extends StatelessWidget {
-  List<String> sex = ['男性', '女性', 'その他'];
-  List<String> used = ['利用していない', '車椅子利用', '電動車椅子利用', 'スポーツ用車椅子'];
-  List<String> caregiver = ['なし', 'あり'];
-  List<String> senior = ['オフ', 'オン'];
+class ConfigurationViews extends StatelessWidget {
+  final List<String> sex = ['男性', '女性', 'その他'];
+  // List<String> old = ['']
+  final List<String> used = ['利用していない', '車椅子利用', '電動車椅子利用', 'スポーツ用車椅子'];
+  final List<String> caregiver = ['なし', 'あり'];
+  final List<String> senior = ['オフ', 'オン'];
 
   @override
   Widget build(BuildContext context) {
@@ -12,26 +13,13 @@ class configurationViews extends StatelessWidget {
       child: Column(
         children: <Widget>[
           pulldownList('性別', sex),
+          // pulldownList('生年月日', old),
           pulldownList('ご利用環境', used),
           pulldownList('介助者', caregiver),
           pulldownList('シニアモード', senior),
-          Container(
-            margin: EdgeInsets.only(
-              top: 24.0,
-            ),
-            height: 56.0,
-            width: MediaQuery.of(context).size.width * 0.90,
-            child: RaisedButton(
-              child: Text('設定を変更'),
-              color: Colors.white,
-              shape: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(10.0),
-                ),
-              ),
-              onPressed: () {},
-            ),
-          ),
+          postConfig(context),
+          supportButtons('アプリのご利用方法'),
+          supportButtons('お問い合わせ'),
         ],
       ),
     );
@@ -72,6 +60,51 @@ pulldownList(String _name, List<String> _list) {
           ),
         ),
       ],
+    ),
+  );
+}
+
+postConfig(context) {
+  return Container(
+    decoration: BoxDecoration(),
+    margin: EdgeInsets.only(
+      top: 24.0,
+    ),
+    child: InkWell(
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Color(0xFF26BD95),
+          ),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        height: 56.0,
+        width: MediaQuery.of(context).size.width * 0.90,
+        child: Center(
+          child: Text(
+            '設定を変更',
+            style: TextStyle(
+              color: Color(0xFF26BD95),
+            ),
+          ),
+        ),
+      ),
+      onTap: () {},
+    ),
+  );
+}
+
+supportButtons(String _name) {
+  return Container(
+    decoration: const BoxDecoration(
+      border: Border(
+        bottom: BorderSide(width: 0.5, color: Color(0xFFE5E8E0)),
+      ),
+    ),
+    child: FlatButton(
+      child: Text(_name),
+      onPressed: () {},
     ),
   );
 }

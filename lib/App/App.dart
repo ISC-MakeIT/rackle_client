@@ -4,7 +4,7 @@ import 'package:splashscreen/splashscreen.dart';
 import '../theme/rackleTheme.dart';
 //import './routes/routes.dart';
 import './BottomNav/BottomMenuBar.dart';
-import './Pages/configuration.dart';
+import './Pages/Configuration.dart';
 
 class Splashscreen extends StatelessWidget {
   @override
@@ -31,7 +31,7 @@ class App extends StatelessWidget {
     return Scaffold(
       body:
           // Container(),
-          configurationViews(),
+          ConfigurationViews(),
       bottomNavigationBar: BottomMenuBar(),
     );
   }

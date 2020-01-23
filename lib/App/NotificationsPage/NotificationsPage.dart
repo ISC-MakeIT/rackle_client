@@ -37,9 +37,17 @@ class NotificationsPageState extends State<NotificationsPage> {
               ),
               child :ListTile(
                 title: Text("List[index],"),
-                subtitle: Text("List[index],"),
+                subtitle: Row(
+                  children: <Widget> [
+                    Icon(Icons.access_time,
+                      color: _iconColor(),
+                    ),
+                    Text("List[index],"),
+                  ]
+                ),
                 trailing: Icon(Icons.navigate_next,
-                  color: _iconColor(),),
+                            color: _iconColor(),
+                          ),
               ),
             ),
           );

@@ -6,4 +6,9 @@ class NewsPage extends StatefulWidget {
 }
 
 class NewsPageState extends State<NewsPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+    );
+  }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../News/NewsPage.dart';
 
 class NotificationsPage extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class NotificationsPageState extends State<NotificationsPage> {
       ),
       body: Center(
         child: ListView.builder(
-        itemCount: List.length,
+        //itemCount: List.length,
         itemBuilder: (context, int index) {
           return GestureDetector(
             onTap: () {
@@ -35,8 +36,8 @@ class NotificationsPageState extends State<NotificationsPage> {
                 ),
               ),
               child :ListTile(
-                title: Text(List[index],),
-                subtitle: Text(List[index],),
+                title: Text("List[index],"),
+                subtitle: Text("List[index],"),
                 trailing: Icon(Icons.navigate_next,
                   color: _iconColor(),),
               ),

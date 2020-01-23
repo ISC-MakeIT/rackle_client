@@ -111,6 +111,8 @@ postConfig(context) {
             '設定を変更',
             style: TextStyle(
               color: Color(0xFF26BD95),
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),

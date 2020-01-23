@@ -65,7 +65,8 @@ pulldownList(String _name, List<String> _list) {
           child: Text(
             _name,
             style: TextStyle(
-              fontSize: 32.0,
+              fontSize: 16.0,
+              color: Color(0xFFB3BAAB),
             ),
           ),
         ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class ConfigurationViews extends StatelessWidget {
   final List<String> sex = ['男性', '女性', 'その他'];
-  // List<String> old = ['']
   final List<String> used = ['利用していない', '車椅子利用', '電動車椅子利用', 'スポーツ用車椅子'];
   final List<String> caregiver = ['なし', 'あり'];
   final List<String> senior = ['オフ', 'オン'];
@@ -15,7 +14,6 @@ class ConfigurationViews extends StatelessWidget {
           children: <Widget>[
             heading('ユーザー設定', context, 0),
             pulldownList('性別', sex),
-            // pulldownList('生年月日', old),
             pulldownList('ご利用環境', used),
             pulldownList('介助者', caregiver),
             pulldownList('シニアモード', senior),

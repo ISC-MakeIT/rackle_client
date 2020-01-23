@@ -29,17 +29,17 @@ class NotificationsPageState extends State<NotificationsPage> {
             );
             },
             child: Container(
-            decoration: new BoxDecoration(
-            border: new Border(
-            bottom: new BorderSide(color: _iconColor()),
+              decoration: new BoxDecoration(
+                border: new Border(
+                bottom: new BorderSide(color: _iconColor()),
+                ),
               ),
-            ),
-            child :ListTile(
-              title: Text(List[index],),
-              subtitle: Text(List[index],),
-              trailing: Icon(Icons.navigate_next,
-                color: _iconColor(),),
-            ),
+              child :ListTile(
+                title: Text(List[index],),
+                subtitle: Text(List[index],),
+                trailing: Icon(Icons.navigate_next,
+                  color: _iconColor(),),
+              ),
             ),
           );
          },

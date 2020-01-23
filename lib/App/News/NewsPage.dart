@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class NoticePage extends StatefulWidget {
+class NewsPage extends StatefulWidget {
   @override
-  NoticePageState createState() => NoticePageState();
+  NewsPageState createState() => NewsPageState();
 }
 
-class NoticePageState extends State<NoticePage> {
+class NewsPageState extends State<NewsPage> {
 }

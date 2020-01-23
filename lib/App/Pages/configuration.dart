@@ -15,6 +15,23 @@ class configurationViews extends StatelessWidget {
           pulldownList('ご利用環境', used),
           pulldownList('介助者', caregiver),
           pulldownList('シニアモード', senior),
+          Container(
+            margin: EdgeInsets.only(
+              top: 24.0,
+            ),
+            height: 56.0,
+            width: MediaQuery.of(context).size.width * 0.90,
+            child: RaisedButton(
+              child: Text('設定を変更'),
+              color: Colors.white,
+              shape: OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
+                ),
+              ),
+              onPressed: () {},
+            ),
+          ),
         ],
       ),
     );

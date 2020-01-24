@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
 class BottomMenuBar extends StatefulWidget {
+  final int menuIndex;
+  final Function indexHundler;
+
+  BottomMenuBar({Key key, this.menuIndex, this.indexHundler}) : super(key: key);
+
   @override
   BottomMenuBarState createState() => BottomMenuBarState();
 }
 
 class BottomMenuBarState extends State<BottomMenuBar> {
-  int _menuIndex = 0;
   TextStyle _textTheme() => Theme.of(context).textTheme.button;
   Color _iconColor() => Theme.of(context).iconTheme.color;
   Color _activeIconColor() => Theme.of(context).accentIconTheme.color;
@@ -72,11 +76,9 @@ class BottomMenuBarState extends State<BottomMenuBar> {
             ),
           ),
         ],
-        currentIndex: _menuIndex,
+        currentIndex: widget.menuIndex,
         onTap: (index) {
-          setState(() {
-            _menuIndex = index;
-          });
+          widget.indexHundler(index);
         });
   }
 }

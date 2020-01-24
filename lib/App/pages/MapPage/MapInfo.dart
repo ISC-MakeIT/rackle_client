@@ -1,7 +1,8 @@
 class MapInfo {
   CurrentStation currentStation;
   AroundSpots aroundSpots;
-  List<Stations> stations;
+  // List<Stations> stations;
+  List<CurrentStation> stations;
   List<News> news;
 
   MapInfo({this.currentStation, this.aroundSpots, this.stations, this.news});
@@ -14,9 +15,11 @@ class MapInfo {
         ? new AroundSpots.fromJson(json['aroundSpots'])
         : null;
     if (json['stations'] != null) {
-      stations = new List<Stations>();
+      // stations = new List<Stations>();
+      stations = new List<CurrentStation>();
       json['stations'].forEach((v) {
-        stations.add(new Stations.fromJson(v));
+        // stations.add(new Stations.fromJson(v));
+        stations.add(new CurrentStation.fromJson(v));
       });
     }
     if (json['news'] != null) {

@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import './Heading.dart';
 import './PulldownList.dart';
 import './PostConfig.dart';
 import './SupportButtons.dart';
+import './Birthday.dart';
 
-class ConfigurationViews extends StatelessWidget {
+class ConfigurationViews extends StatefulWidget {
+  @override
+  ConfigurationViewsState createState() => ConfigurationViewsState();
+}
+
+class ConfigurationViewsState extends State<ConfigurationViews> {
   final List<String> name = [
     'ユーザー設定',
     '性別',
+    '生年月日',
     'ご利用環境',
     '介護者',
     'シニアモード',
@@ -41,21 +49,66 @@ class ConfigurationViews extends StatelessWidget {
     24.0,
   ];
 
+  var userBirthday;
+
+  final formatter = DateFormat('yyyy/MM/dd');
+
+  setBirthday(item) {
+    setState(() {
+      userBirthday = item;
+    });
+    print('$userBirthday');
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
         child: Column(
           children: <Widget>[
-            Heading(name: name[0], context: context, margin: margin),
-            PulldownList(name: name[1], list: sex),
-            PulldownList(name: name[2], list: used),
-            PulldownList(name: name[3], list: caregiver),
-            PulldownList(name: name[4], list: senior),
-            PostConfig(context: context),
-            Heading(name: name[5], context: context, margin: margin),
-            SupportButtons(name: name[6], context: context),
-            SupportButtons(name: name[7], context: context),
+            Heading(
+              name: name[0],
+              context: context,
+              margin: margin,
+            ),
+            PulldownList(
+              name: name[1],
+              list: sex,
+            ),
+            Birthday(
+              name: name[2],
+              formatter: formatter,
+              setBirthday: setBirthday,
+              userBirthday: userBirthday,
+            ),
+            PulldownList(
+              name: name[3],
+              list: used,
+            ),
+            PulldownList(
+              name: name[4],
+              list: caregiver,
+            ),
+            PulldownList(
+              name: name[5],
+              list: senior,
+            ),
+            PostConfig(
+              context: context,
+            ),
+            Heading(
+              name: name[6],
+              context: context,
+              margin: margin,
+            ),
+            SupportButtons(
+              name: name[7],
+              context: context,
+            ),
+            SupportButtons(
+              name: name[8],
+              context: context,
+            ),
           ],
         ),
       ),

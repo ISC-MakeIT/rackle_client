@@ -9,4 +9,10 @@ class CurrentStation {
       : name = json['name'],
         lat = json['lat'],
         lng = json['lng'];
+
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'lat': lat,
+        'lng': lng,
+      };
 }

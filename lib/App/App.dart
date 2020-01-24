@@ -4,7 +4,7 @@ import 'package:splashscreen/splashscreen.dart';
 import '../theme/rackleTheme.dart';
 //import './routes/routes.dart';
 import './BottomNav/BottomMenuBar.dart';
-import './Pages/Configuration.dart';
+import './Pages/configuration_screen/ConfigurationViews.dart';
 
 class Splashscreen extends StatelessWidget {
   @override

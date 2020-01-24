@@ -1,35 +1,53 @@
-import 'package:flutter/material.dart';
-import 'package:splashscreen/splashscreen.dart';
+part of 'SplashImage.dart';
 
-import '../theme/rackleTheme.dart';
-//import './routes/routes.dart';
-import './BottomNav/BottomMenuBar.dart';
+class App extends StatefulWidget {
+  final Widget pageOfIndex0;
+  final Widget pageOfIndex1;
+  final Widget pageOfIndex2;
+  final Widget pageOfIndex3;
 
-class Splashscreen extends StatelessWidget {
+  App({
+    Key key,
+    @required this.pageOfIndex0,
+    @required this.pageOfIndex1,
+    @required this.pageOfIndex2,
+    @required this.pageOfIndex3,
+  }) : super(key: key);
+
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'らっくる',
-      theme: rackleTheme,
-      home: SplashScreen(
-          seconds: 7,
-          navigateAfterSeconds: App(),
-          image: Image.asset(
-            'assets/logo_rackle.png',
-          ),
-          photoSize: 140.0,
-          imageBackground: AssetImage('assets/logo_background.png'),
-          loaderColor: Colors.white),
-    );
-  }
+  AppState createState() => AppState();
 }
 
-class App extends StatelessWidget {
+class AppState extends State<App> {
+  int _menuIndex = 0;
+  List<Widget> _pages = [];
+
+  void changeIndexHundler(index) {
+    setState(() {
+      _menuIndex = index;
+    });
+  }
+
   @override
+  void initState() {
+    print(_pages);
+    print(widget.pageOfIndex0);
+    _pages
+      ..add(widget.pageOfIndex0)
+      ..add(widget.pageOfIndex1)
+      ..add(widget.pageOfIndex2)
+      ..add(widget.pageOfIndex3);
+
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
-      bottomNavigationBar: BottomMenuBar(),
+      body: _pages[_menuIndex],
+      bottomNavigationBar: BottomMenuBar(
+        menuIndex: _menuIndex,
+        indexHundler: changeIndexHundler,
+      ),
     );
   }
 }

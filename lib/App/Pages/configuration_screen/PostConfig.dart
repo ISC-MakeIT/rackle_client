@@ -11,7 +11,6 @@ class PostConfig extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
       margin: EdgeInsets.only(
         top: 24.0,
       ),

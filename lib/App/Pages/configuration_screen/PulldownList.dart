@@ -8,7 +8,7 @@ class PulldownList extends StatelessWidget {
   });
 
   final name;
-  List<String> list;
+  final List<String> list;
 
   @override
   Widget build(BuildContext context) {

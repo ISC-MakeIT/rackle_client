@@ -10,7 +10,7 @@ class Heading extends StatelessWidget {
 
   final name;
   final context;
-  List<double> margin;
+  final List<double> margin;
 
   @override
   Widget build(BuildContext context) {

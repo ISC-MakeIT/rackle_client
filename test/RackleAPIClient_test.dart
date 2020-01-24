@@ -5,6 +5,8 @@ import 'package:rackle_client/API/RackleAPIClient.dart';
 
 void main() {
   final env = Platform.environment;
+  String message = 'environment values isn`t set';
+  dynamic shouldSkip = env['URL'] == null ? message : false;
   test('APIClient request method', () async {
     final api = RackleAPIClient(
       url: env['URL'],
@@ -15,10 +17,10 @@ void main() {
     print(body);
 
     /// 正しいResponseがに対して存在する値を比較した時のテスト
-		/// expect(body[key], equal(value));
-		/// 正しいResponseに対して存在しない値を比較した時のテスト
-		/// expect(body[key], equal(wrong_value));
-		/// 間違ったResponseに対してランダムな値を比較した時のテスト
-		/// expect(body[wrong_key], equal(any_value));
-  });
+    /// expect(body[key], equal([value]));
+    /// 正しいResponseに対して存在しない値を比較した時のテスト
+    /// expect(body[key], equal([wrong_value]));
+    /// 間違ったResponseに対してランダムな値を比較した時のテスト
+    /// expect(body[wrong_key], equal([any_value]));
+  }, skip: shouldSkip);
 }

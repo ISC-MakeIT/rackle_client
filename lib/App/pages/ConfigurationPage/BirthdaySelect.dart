@@ -30,7 +30,11 @@ class BirthdaySelect extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(top: 19.0, left: 21.0, bottom: 19.0),
+            padding: EdgeInsets.only(
+              top: 19.0,
+              left: 21.0,
+              bottom: 19.0,
+            ),
             child: Text(
               name,
               style: TextStyle(

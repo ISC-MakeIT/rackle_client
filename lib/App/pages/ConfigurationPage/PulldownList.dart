@@ -30,14 +30,21 @@ class PulldownListState extends State<PulldownList> {
     return Container(
       decoration: const BoxDecoration(
         border: Border(
-          bottom: BorderSide(width: 0.5, color: Color(0xFFE5E8E0)),
+          bottom: BorderSide(
+            width: 0.5,
+            color: Color(0xFFE5E8E0),
+          ),
         ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(top: 19.0, left: 21.0, bottom: 19.0),
+            padding: EdgeInsets.only(
+              top: 19.0,
+              left: 21.0,
+              bottom: 19.0,
+            ),
             child: Text(
               widget.name,
               style: TextStyle(
@@ -47,7 +54,11 @@ class PulldownListState extends State<PulldownList> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 19.0, right: 21.0, bottom: 19.0),
+            padding: EdgeInsets.only(
+              top: 19.0,
+              right: 21.0,
+              bottom: 19.0,
+            ),
             child: DropdownButton<String>(
               value: dropdownValue,
               iconSize: 0.0,

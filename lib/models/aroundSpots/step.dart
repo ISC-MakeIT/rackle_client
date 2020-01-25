@@ -8,7 +8,7 @@ class Step {
   final String name;
   final String category;
   final String description;
-  final bool level;
+  final int level;
   final String createdAt;
   final String updatedAt;
 

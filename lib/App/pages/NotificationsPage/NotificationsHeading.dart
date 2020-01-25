@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Page extends StatelessWidget {
+class NotificationsHeading extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,7 +13,7 @@ class Page extends StatelessWidget {
       child: Text(
         "お知らせ",
         style: TextStyle(
-          fontSize: 22.62,
+          fontSize: 25.13,
           fontWeight: FontWeight.bold,
         ),
         textAlign: TextAlign.left,

@@ -25,25 +25,21 @@ class ConfigurationPageState extends State<ConfigurationPage> {
     'お問い合わせ',
   ];
   final List<String> sex = [
-    '選択してください',
     '男性',
     '女性',
     'その他',
   ];
   final List<String> used = [
-    '選択してください',
     '利用していない',
     '車椅子利用',
     '電動車椅子利用',
     'スポーツ用車椅子利用',
   ];
   final List<String> caregiver = [
-    '選択してください',
     'なし',
     'あり',
   ];
   final List<String> senior = [
-    '選択してください',
     'オフ',
     'オン',
   ];

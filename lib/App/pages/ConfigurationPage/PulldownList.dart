@@ -15,9 +15,9 @@ class PulldownList extends StatefulWidget {
 }
 
 class PulldownListState extends State<PulldownList> {
+  String dropdownValue;
   @override
   Widget build(BuildContext context) {
-    String dropdownValue = widget.list[0];
     return Container(
       decoration: const BoxDecoration(
         border: Border(
@@ -43,6 +43,7 @@ class PulldownListState extends State<PulldownList> {
               value: dropdownValue,
               iconSize: 0.0,
               isDense: true,
+              hint: Text('選択してください'),
               items: widget.list.map(
                 (String value) {
                   return DropdownMenuItem<String>(

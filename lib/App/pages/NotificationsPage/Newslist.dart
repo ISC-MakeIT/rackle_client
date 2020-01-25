@@ -6,7 +6,6 @@ class Newslist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      padding: EdgeInsets.only(top: 0,bottom :27.0,),
       height: 628,
         child: ListView.builder(
         padding: EdgeInsets.only(top: 0.0),

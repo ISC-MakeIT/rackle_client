@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
-class Birthday extends StatelessWidget {
-  Birthday({
+class BirthdaySelect extends StatelessWidget {
+  BirthdaySelect({
     Key key,
     this.name,
     this.formatter,

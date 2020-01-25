@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 import './Heading.dart';
 import './PulldownList.dart';
-import './Birthday.dart';
+import './BirthdaySelect.dart';
 import './PostConfig.dart';
 import './SupportButtons.dart';
 
@@ -76,7 +76,7 @@ class ConfigurationPageState extends State<ConfigurationPage> {
               name: name[1],
               list: sex,
             ),
-            Birthday(
+            BirthdaySelect(
               name: name[2],
               formatter: formatter,
               setBirthday: setBirthday,

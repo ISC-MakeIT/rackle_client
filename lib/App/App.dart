@@ -22,7 +22,7 @@ class AppState extends State<App> {
   int _menuIndex = 0;
   List<Widget> _pages = [];
 
-  void changeIndexHundler(index) {
+  void navigationHandler(index) {
     setState(() {
       _menuIndex = index;
     });
@@ -46,7 +46,7 @@ class AppState extends State<App> {
       body: _pages[_menuIndex],
       bottomNavigationBar: BottomMenuBar(
         menuIndex: _menuIndex,
-        indexHundler: changeIndexHundler,
+        navigationHandler: navigationHandler,
       ),
     );
   }

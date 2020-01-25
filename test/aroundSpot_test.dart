@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'dart:convert';
 
-import 'package:rackle_client/models/model.dart';
+import 'package:rackle_client/models/models.dart';
 
 void main() {
   test(

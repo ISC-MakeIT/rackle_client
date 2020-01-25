@@ -1,7 +1,7 @@
-import 'package:rackle_client/models/aroundSpots/Elevetor.dart';
-import 'package:rackle_client/models/aroundSpots/Slope.dart';
-import 'package:rackle_client/models/aroundSpots/Step.dart';
-import 'package:rackle_client/models/aroundSpots/Toilet.dart';
+import 'elevetor.dart';
+import 'toilet.dart';
+import 'step.dart';
+import 'slope.dart';
 
 class AroundSpot {
   final List<Elevetor> elevetor;

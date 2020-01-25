@@ -15,9 +15,9 @@ class PulldownList extends StatefulWidget {
 }
 
 class PulldownListState extends State<PulldownList> {
-  String dropdownValue;
   @override
   Widget build(BuildContext context) {
+    String dropdownValue = widget.list[0];
     return Container(
       decoration: const BoxDecoration(
         border: Border(
@@ -41,6 +41,7 @@ class PulldownListState extends State<PulldownList> {
             padding: EdgeInsets.only(top: 19.0, right: 21.0, bottom: 19.0),
             child: DropdownButton<String>(
               value: dropdownValue,
+              iconSize: 0.0,
               isDense: true,
               items: widget.list.map(
                 (String value) {

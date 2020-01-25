@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:rackle_client/App/pages/NotificationsPage/Newslist.dart';
 import 'package:rackle_client/App/pages/NotificationsPage/NotificationsHeading.dart';
-import 'package:rackle_client/App/pages/pages.dart';
 
-class NotificationsPage extends StatelessWidget {
+class NotificationsPage extends StatefulWidget {
+  @override
+  NotificationsPageState createState() => NotificationsPageState();
+}
+
+class NotificationsPageState extends State<NotificationsPage> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import './Heading.dart';
+import './HeadingText.dart';
 import './PulldownList.dart';
 import './BirthdaySelect.dart';
 import './ConfigPostButton.dart';
@@ -64,7 +64,7 @@ class ConfigurationPageState extends State<ConfigurationPage> {
       child: Container(
         child: Column(
           children: <Widget>[
-            Heading(
+            HeadingText(
               name: titleName[0],
               context: context,
             ),
@@ -93,7 +93,7 @@ class ConfigurationPageState extends State<ConfigurationPage> {
             ConfigPostButton(
               context: context,
             ),
-            Heading(
+            HeadingText(
               name: titleName[6],
               context: context,
             ),

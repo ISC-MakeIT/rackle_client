@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Heading extends StatelessWidget {
-  Heading({
+class HeadingText extends StatelessWidget {
+  HeadingText({
     Key key,
     this.name,
     this.context,

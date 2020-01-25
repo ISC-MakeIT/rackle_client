@@ -19,13 +19,13 @@ class AroundSpot {
     List<Elevetor> elevetorList =
         _elevetor.map((i) => Elevetor.fromJson(i)).toList();
 
-    var _toilet = target['elevetor'] as List;
+    var _toilet = target['toilet'] as List;
     List<Toilet> toiletList = _toilet.map((i) => Toilet.fromJson(i)).toList();
 
     var _step = target['step'] as List;
     List<Step> stepList = _step.map((i) => Step.fromJson(i)).toList();
 
-    var _slope = target['slop'] as List;
+    var _slope = target['slope'] as List;
     List<Slope> slopeList = _slope.map((i) => Slope.fromJson(i)).toList();
 
     return AroundSpot(

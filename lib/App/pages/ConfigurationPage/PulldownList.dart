@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PulldownList extends StatelessWidget {
+class PulldownList extends StatefulWidget {
   PulldownList({
     Key key,
     this.name,
@@ -10,6 +10,12 @@ class PulldownList extends StatelessWidget {
   final name;
   final List<String> list;
 
+  @override
+  PulldownListState createState() => PulldownListState();
+}
+
+class PulldownListState extends State<PulldownList> {
+  String dropdownValue;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +30,7 @@ class PulldownList extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: 19.0, left: 21.0, bottom: 19.0),
             child: Text(
-              name,
+              widget.name,
               style: TextStyle(
                 fontSize: 16.0,
                 color: Color(0xFFB3BAAB),
@@ -34,7 +40,9 @@ class PulldownList extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: 19.0, right: 21.0, bottom: 19.0),
             child: DropdownButton<String>(
-              items: list.map(
+              value: dropdownValue,
+              isDense: true,
+              items: widget.list.map(
                 (String value) {
                   return DropdownMenuItem<String>(
                     value: value,
@@ -42,7 +50,9 @@ class PulldownList extends StatelessWidget {
                   );
                 },
               ).toList(),
-              onChanged: (_) {},
+              onChanged: (String newValue) => setState(() {
+                dropdownValue = newValue;
+              }),
             ),
           ),
         ],

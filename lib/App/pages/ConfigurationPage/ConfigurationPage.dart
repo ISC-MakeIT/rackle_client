@@ -33,7 +33,7 @@ class ConfigurationPageState extends State<ConfigurationPage> {
     '利用していない',
     '車椅子利用',
     '電動車椅子利用',
-    'スポーツ用車椅子',
+    'スポーツ用車椅子利用',
   ];
   final List<String> caregiver = [
     'なし',

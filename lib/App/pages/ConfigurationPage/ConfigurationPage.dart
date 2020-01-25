@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 import './Heading.dart';
 import './PulldownList.dart';
 import './BirthdaySelect.dart';
-import './PostConfig.dart';
+import './ConfigPostButton.dart';
 import './SupportButtons.dart';
 
 class ConfigurationPage extends StatefulWidget {
@@ -13,7 +13,7 @@ class ConfigurationPage extends StatefulWidget {
 }
 
 class ConfigurationPageState extends State<ConfigurationPage> {
-  final List<String> name = [
+  final List<String> titleName = [
     'ユーザー設定',
     '性別',
     '生年月日',
@@ -29,7 +29,7 @@ class ConfigurationPageState extends State<ConfigurationPage> {
     '女性',
     'その他',
   ];
-  final List<String> used = [
+  final List<String> useStatus = [
     '利用していない',
     '車椅子利用',
     '電動車椅子利用',
@@ -39,20 +39,17 @@ class ConfigurationPageState extends State<ConfigurationPage> {
     'なし',
     'あり',
   ];
-  final List<String> senior = [
+  final List<String> seniorMode = [
     'オフ',
     'オン',
   ];
 
-  final List<double> margin = [
-    44.0,
-    24.0,
-  ];
-
+  //選択した生年月日を格納する関数
   String userBirthday = '2000/1/1';
 
   final formatter = DateFormat('yyyy/MM/dd');
 
+  //選択した生年月日をuserBirthdayのstateに格納する関数
   setBirthday(item) {
     setState(
       () {
@@ -68,46 +65,44 @@ class ConfigurationPageState extends State<ConfigurationPage> {
         child: Column(
           children: <Widget>[
             Heading(
-              name: name[0],
+              name: titleName[0],
               context: context,
-              margin: margin,
             ),
             PulldownList(
-              name: name[1],
+              name: titleName[1],
               list: sex,
             ),
             BirthdaySelect(
-              name: name[2],
+              name: titleName[2],
               formatter: formatter,
               setBirthday: setBirthday,
               userBirthday: userBirthday,
             ),
             PulldownList(
-              name: name[3],
-              list: used,
+              name: titleName[3],
+              list: useStatus,
             ),
             PulldownList(
-              name: name[4],
+              name: titleName[4],
               list: caregiver,
             ),
             PulldownList(
-              name: name[5],
-              list: senior,
+              name: titleName[5],
+              list: seniorMode,
             ),
-            PostConfig(
+            ConfigPostButton(
               context: context,
             ),
             Heading(
-              name: name[6],
-              context: context,
-              margin: margin,
-            ),
-            SupportButtons(
-              name: name[7],
+              name: titleName[6],
               context: context,
             ),
             SupportButtons(
-              name: name[8],
+              name: titleName[7],
+              context: context,
+            ),
+            SupportButtons(
+              name: titleName[8],
               context: context,
             ),
           ],

@@ -15,7 +15,16 @@ class PulldownList extends StatefulWidget {
 }
 
 class PulldownListState extends State<PulldownList> {
+  //選択したpulldownの値を格納する変数
   String dropdownValue;
+
+  //選択したpulldownの値をdropdownValueのstateの格納する関数
+  setDropdownValue(item) {
+    setState(() {
+      dropdownValue = item;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,7 +51,7 @@ class PulldownListState extends State<PulldownList> {
             child: DropdownButton<String>(
               value: dropdownValue,
               iconSize: 0.0,
-              isDense: true,
+              isDense: true, //これがないとvalueが映せません
               hint: Text('選択してください'),
               items: widget.list.map(
                 (String value) {
@@ -52,9 +61,7 @@ class PulldownListState extends State<PulldownList> {
                   );
                 },
               ).toList(),
-              onChanged: (String newValue) => setState(() {
-                dropdownValue = newValue;
-              }),
+              onChanged: (String newValue) => setDropdownValue(newValue),
             ),
           ),
         ],

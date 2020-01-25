@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PostConfig extends StatelessWidget {
-  PostConfig({
+class ConfigPostButton extends StatelessWidget {
+  ConfigPostButton({
     Key key,
     this.context,
   });

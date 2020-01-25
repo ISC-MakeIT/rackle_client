@@ -5,12 +5,10 @@ class Heading extends StatelessWidget {
     Key key,
     this.name,
     this.context,
-    this.margin,
   });
 
   final name;
   final context;
-  final List<double> margin;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +16,7 @@ class Heading extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.90,
       height: 56.0,
       margin: EdgeInsets.only(
-        top: margin[0],
+        top: 44.0,
       ),
       child: Text(
         name,

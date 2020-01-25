@@ -9,13 +9,32 @@ class AroundSpot {
   final List<Step> step;
   final List<Slope> slope;
 
-  AroundSpot(this.elevetor, this.toilet, this.step, this.slope);
+  AroundSpot({this.elevetor, this.toilet, this.step, this.slope});
 
-  AroundSpot.fromJson(Map<String, dynamic> json)
-      : elevetor = json['elevetor'],
-        toilet = json['toilet'],
-        step = json['step'],
-        slope = json['slope'];
+  factory AroundSpot.fromJson(Map<String, dynamic> json) {
+    final target = json['aroundSpot'];
+
+    //TODO: need refactoring
+    var _elevetor = target['elevetor'] as List;
+    List<Elevetor> elevetorList =
+        _elevetor.map((i) => Elevetor.fromJson(i)).toList();
+
+    var _toilet = target['elevetor'] as List;
+    List<Toilet> toiletList = _toilet.map((i) => Toilet.fromJson(i)).toList();
+
+    var _step = target['step'] as List;
+    List<Step> stepList = _step.map((i) => Step.fromJson(i)).toList();
+
+    var _slope = target['slop'] as List;
+    List<Slope> slopeList = _slope.map((i) => Slope.fromJson(i)).toList();
+
+    return AroundSpot(
+      elevetor: elevetorList,
+      toilet: toiletList,
+      step: stepList,
+      slope: slopeList,
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         'elevetor': elevetor,

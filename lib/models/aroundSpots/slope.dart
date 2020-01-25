@@ -13,7 +13,7 @@ class Slope {
   final String updatedAt;
 
   Slope(
-      {this.id,
+      this.id,
       this.stationId,
       this.imagePath,
       this.floor,
@@ -24,7 +24,7 @@ class Slope {
       this.description,
       this.level,
       this.createdAt,
-      this.updatedAt});
+      this.updatedAt);
 
   Slope.fromJson(Map<String, dynamic> json)
       : id = json['id'],

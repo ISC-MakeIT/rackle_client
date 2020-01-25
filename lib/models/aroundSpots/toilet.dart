@@ -13,7 +13,7 @@ class Toilet {
   final String updatedAt;
 
   Toilet(
-      {this.id,
+      this.id,
       this.stationId,
       this.imagePath,
       this.floor,
@@ -24,7 +24,7 @@ class Toilet {
       this.description,
       this.isMulitipurpose,
       this.createdAt,
-      this.updatedAt});
+      this.updatedAt);
 
   Toilet.fromJson(Map<String, dynamic> json)
       : id = json['id'],

@@ -13,7 +13,7 @@ class Step {
   final String updatedAt;
 
   Step(
-      {this.id,
+      this.id,
       this.stationId,
       this.imagePath,
       this.floor,
@@ -24,7 +24,7 @@ class Step {
       this.description,
       this.level,
       this.createdAt,
-      this.updatedAt});
+      this.updatedAt);
 
   Step.fromJson(Map<String, dynamic> json)
       : id = json['id'],

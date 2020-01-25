@@ -15,7 +15,7 @@ class Elevetor {
   final String updatedAt;
 
   Elevetor(
-      {this.id,
+      this.id,
       this.stationId,
       this.imagePath,
       this.floor,
@@ -28,7 +28,7 @@ class Elevetor {
       this.from,
       this.to,
       this.createdAt,
-      this.updatedAt});
+      this.updatedAt);
 
   Elevetor.fromJson(Map<String, dynamic> json)
       : id = json['id'],

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class BottomMenuBar extends StatefulWidget {
   final int menuIndex;
-  final Function indexHundler;
+  final Function navigationHandler;
 
-  BottomMenuBar({Key key, this.menuIndex, this.indexHundler}) : super(key: key);
+  BottomMenuBar({Key key, this.menuIndex, this.navigationHandler}) : super(key: key);
 
   @override
   BottomMenuBarState createState() => BottomMenuBarState();
@@ -78,7 +78,7 @@ class BottomMenuBarState extends State<BottomMenuBar> {
         ],
         currentIndex: widget.menuIndex,
         onTap: (index) {
-          widget.indexHundler(index);
+          widget.navigationHandler(index);
         });
   }
 }

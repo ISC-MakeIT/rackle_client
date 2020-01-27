@@ -34,6 +34,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   splashscreen:
+  flutter_dotenv:
 
 
 # For information on the generic Dart part of this file, see the
@@ -53,6 +54,7 @@ flutter:
   #  - images/a_dot_ham.jpeg
   - assets/logo_background.png
   - assets/logo_rackle.png
+  - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

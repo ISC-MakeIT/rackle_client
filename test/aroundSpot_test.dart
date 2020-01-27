@@ -16,10 +16,11 @@ void main() {
         url: env['URL'],
       );
 
-      final resp =
-          await api.getRequest(path: env['API_PATH'], queryParameters: {
-        'lat': '20.2531',
-        'lng': '122.5557',
+      final resp =await api.getRequest(
+        path: env['API_PATH'], 
+        queryParameters: {
+          'lat': '20.2531',
+          'lng': '122.5557',
       });
       final String body = resp.body;
       final parsed = json.decode(body);

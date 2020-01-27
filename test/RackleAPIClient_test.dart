@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'dart:io';
-import 'dart:convert';
 
 import 'package:rackle_client/API/RackleAPIClient.dart';
 
@@ -13,20 +12,15 @@ void main() {
       url: env['URL'],
     );
 
-    final resp = await api.getRequest(path: env['API_PATH'], queryParameters: {
-      'lat': '20.2531',
-      'lng': '122.5557',
-    });
-    final String body = resp.body;
-    final parsed = json.decode(body);
-    expect(parsed['currentStation'], equals({
-      'id': 3,
-      'name': '小田原駅',
-      'latlng': 'POINT (139.155393 35.256445)',
-      'created_at': '2020-01-26T11:23:17.389Z',
-      'updated_at': '2020-01-26T11:23:17.389Z',
-      'lat': 35.256445,
-      'lng': 139.155393
-    }));
+    final json = await api.getJSON(
+      category: 'news',
+      path: env['API_PATH'],
+      queryParameters: {
+        'lat': '20.2531',
+        'lng': '122.5557',
+      },
+    );
+
+    expect(json['news'][0]['id'], equals(1));
   }, skip: shouldSkip);
 }

@@ -7,14 +7,20 @@ class RackleAPIClient {
 
   RackleAPIClient({this.url});
 
-  Uri _buildUri({String path = ''}) {
-    return Uri.http(this.url, path);
+  Uri _buildUri({String path = '', Map<String, String> queryParameters}) {
+    return Uri.http(this.url, path, queryParameters);
   }
 
-  Future<http.Response> getRequest({path = ''}) async {
+  Future<http.Response> getRequest({
+    String path = '',
+    Map<String, String> queryParameters,
+  }) async {
     try {
       return await http.get(
-        _buildUri(path: path),
+        _buildUri(
+          path: path,
+          queryParameters: queryParameters,
+        ),
         headers: {
           HttpHeaders.contentTypeHeader: 'application/json',
         },

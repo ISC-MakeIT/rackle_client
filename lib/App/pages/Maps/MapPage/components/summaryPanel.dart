@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class SummaryPanel extends StatelessWidget {
+  final body;
+
+  SummaryPanel({this.body});
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return SlidingUpPanel(
       panel: _panel(),
+      body: body,
       backdropEnabled: true,
       borderRadius: BorderRadius.only(
         topLeft: Radius.circular(15),

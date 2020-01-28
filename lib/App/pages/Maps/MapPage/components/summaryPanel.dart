@@ -4,7 +4,7 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 class SummaryPanel extends StatelessWidget {
   final body;
 
-  SummaryPanel({this.body});
+  SummaryPanel({@required this.body});
 
   @override
   Widget build(BuildContext context) {

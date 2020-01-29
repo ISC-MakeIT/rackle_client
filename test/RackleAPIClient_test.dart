@@ -5,8 +5,8 @@ import 'package:rackle_client/API/RackleAPIClient.dart';
 
 void main() {
   final env = Platform.environment;
-  String skipMessage = 'environment values isn`t set';
-  dynamic shouldSkip = env['URL'] == null ? skipMessage : false;
+  // String skipMessage = 'environment values isn`t set';
+  // dynamic shouldSkip = env['URL'] == null ? skipMessage : false;
   test('APIClient request method', () async {
     final api = RackleAPIClient(
       url: env['URL'],
@@ -22,5 +22,5 @@ void main() {
     );
 
     expect(json['news'][0]['id'], equals(1));
-  }, skip: shouldSkip);
+  }, skip: "this test is skiped");
 }

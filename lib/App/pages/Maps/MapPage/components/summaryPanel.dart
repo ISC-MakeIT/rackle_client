@@ -33,26 +33,18 @@ class SummaryPanel extends StatelessWidget {
               width: 30,
               height: 5,
               decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.all(Radius.circular(12.0))),
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.all(
+                  Radius.circular(12.0),
+                ),
+              ),
             ),
           ],
         ),
         SizedBox(
           height: 18.0,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              "Explore Pittsburgh",
-              style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: 24.0,
-              ),
-            ),
-          ],
-        ),
+        Text("HOGE"),
       ],
     );
   }

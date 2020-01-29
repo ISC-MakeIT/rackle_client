@@ -8,9 +8,12 @@ class SummaryPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _panelHeightOpen = MediaQuery.of(context).size.height * .80;
+
     return SlidingUpPanel(
       panel: _panel(),
       body: body,
+      maxHeight: _panelHeightOpen,
       backdropEnabled: true,
       borderRadius: BorderRadius.only(
         topLeft: Radius.circular(15),

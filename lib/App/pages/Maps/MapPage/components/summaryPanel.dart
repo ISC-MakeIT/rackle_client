@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import './selectStation.dart';
 
 class SummaryPanel extends StatelessWidget {
   final body;
@@ -23,32 +24,35 @@ class SummaryPanel extends StatelessWidget {
   }
 
   Widget _panel() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        SizedBox(
-          height: 12.0,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              width: 30,
-              height: 5,
-              decoration: BoxDecoration(
-                color: Colors.grey[300],
-                borderRadius: BorderRadius.all(
-                  Radius.circular(12.0),
+    return Container(
+      padding: EdgeInsets.only(
+        left: 22,
+        right: 22,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          SizedBox(
+            height: 12.0,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                width: 30,
+                height: 5,
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(12.0),
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 18.0,
-        ),
-        Text("HOGE"),
-      ],
+            ],
+          ),
+          SelectStation(),
+        ],
+      ),
     );
   }
 }

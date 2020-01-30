@@ -6,17 +6,31 @@ class StationSummary extends StatelessWidget {
     return Column(
       children: <Widget>[
         Container(
+          width: MediaQuery.of(context).size.width,
           margin: EdgeInsets.only(top: 13),
-          child: Align(
-            alignment: Alignment.topLeft,
-            child: Text(
-              "横浜駅",
-              style: TextStyle(
-                color: Color(0xff53514B),
-                fontWeight: FontWeight.bold,
-                fontSize: 22.62,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "横浜駅",
+                  style: TextStyle(
+                    color: Color(0xff53514B),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22.62,
+                  ),
+                ),
               ),
-            ),
+              Container(
+                width: 28,
+                height: 28,
+                child: RaisedButton(
+                  color: Color(0xffB3BAAB),
+                  onPressed: () {},
+                ),
+              ),
+            ],
           ),
         ),
         Container(

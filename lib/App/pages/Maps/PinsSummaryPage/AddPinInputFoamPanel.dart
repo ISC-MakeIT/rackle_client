@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
 
-class AddPinInputFoamPanel extends StatelessWidget {
-  AddPinInputFoamPanel({
-    Key key,
-    this.sc,
-  });
-
+class AddPinInputFoamPanel extends StatefulWidget {
   final sc;
+
+  AddPinInputFoamPanel(
+    this.sc,
+  );
+
+  @override
+  AddPinInputFoamPanelState createState() => AddPinInputFoamPanelState();
+}
+
+class AddPinInputFoamPanelState extends State<AddPinInputFoamPanel> {
+  String nowfloor;
+
+  //階層の仮データ
+  List<String> floorList = ['B1F', '1F', '2F'];
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      controller: sc,
+      controller: widget.sc,
       child: Column(
         children: <Widget>[
           Container(
@@ -40,15 +49,16 @@ class AddPinInputFoamPanel extends StatelessWidget {
               ),
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 const Padding(
                   padding: EdgeInsets.only(
                     top: 24.0,
+                    right: 57.0,
                     bottom: 24.0,
                   ),
                   child: Text(
-                    '名前',
+                    '名称',
                     style: TextStyle(
                       fontSize: 16,
                       color: Color(0xFFB3BAAB),
@@ -56,10 +66,15 @@ class AddPinInputFoamPanel extends StatelessWidget {
                   ),
                 ),
                 Container(
+                  width: MediaQuery.of(context).size.width * 0.65,
+                  margin: EdgeInsets.only(
+                    top: 19.0,
+                    bottom: 24.0,
+                  ),
                   child: TextField(
                     maxLines: 8,
                     decoration: InputDecoration.collapsed(
-                      hintText: 'hello',
+                      hintText: '場所の名前を入力して下さい',
                     ),
                   ),
                 ),
@@ -78,11 +93,12 @@ class AddPinInputFoamPanel extends StatelessWidget {
               ),
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 const Padding(
                   padding: EdgeInsets.only(
                     top: 24.0,
+                    right: 57.0,
                     bottom: 24.0,
                   ),
                   child: Text(
@@ -93,6 +109,32 @@ class AddPinInputFoamPanel extends StatelessWidget {
                     ),
                   ),
                 ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: 19.0,
+                    right: 21.0,
+                    bottom: 19.0,
+                  ),
+                  child: DropdownButton<String>(
+                    value: nowfloor,
+                    iconSize: 0.0,
+                    isDense: true, //これがないとvalueが映せません
+                    hint: Text('階層を選択してください'),
+                    items: floorList.map(
+                      (String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      },
+                    ).toList(),
+                    onChanged: (String newValue) => setState(
+                      () {
+                        nowfloor = newValue;
+                      },
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -108,11 +150,12 @@ class AddPinInputFoamPanel extends StatelessWidget {
               ),
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 const Padding(
                   padding: EdgeInsets.only(
                     top: 24.0,
+                    right: 57.0,
                     bottom: 24.0,
                   ),
                   child: Text(
@@ -120,6 +163,19 @@ class AddPinInputFoamPanel extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       color: Color(0xFFB3BAAB),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.55,
+                  margin: EdgeInsets.only(
+                    top: 19.0,
+                    bottom: 24.0,
+                  ),
+                  child: TextField(
+                    maxLines: 8,
+                    decoration: InputDecoration.collapsed(
+                      hintText: 'コメントを入力して下さい',
                     ),
                   ),
                 ),

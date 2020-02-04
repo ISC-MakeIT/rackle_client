@@ -56,24 +56,29 @@ class PinSummary extends StatelessWidget {
             ),
           ),
           Container(
-            width: MediaQuery.of(context).size.width,
-            height: 200,
-            margin: EdgeInsets.only(bottom: 32),
+            height: 35,
+            margin: EdgeInsets.only(top: 16, bottom: 16),
             child: ListView.builder(
+              scrollDirection: Axis.horizontal,
               itemCount: tagList.length,
               itemBuilder: (BuildContext context, int index) {
-                return ChoiceChip(
-                  label: Text(tagList[index]["name"]),
-                  // avatar: tagList,
-                  padding: EdgeInsets.all(10),
-                  labelStyle: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                return Container(
+                  margin: EdgeInsets.only(right: 7),
+                  child: ChoiceChip(
+                    label: Text(tagList[index]["name"]),
+                    padding: EdgeInsets.all(10),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(),
+                    ),
+                    labelStyle: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    elevation: 2,
+                    selected: tagList[index]["active"],
+                    selectedColor: Color(0xffCAF8E2),
                   ),
-                  elevation: 2,
-                  selected: tagList[index]["active"],
-                  selectedColor: Color(0xffCAF8E2),
                 );
               },
             ),

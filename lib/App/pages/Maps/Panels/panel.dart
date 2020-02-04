@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import './pinSummary.dart';
+import './MapPage/pinSummary.dart';
 
-class SummaryPanel extends StatelessWidget {
+class Panel extends StatelessWidget {
   final body;
 
-  SummaryPanel({@required this.body});
+  Panel({@required this.body});
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class StationSummary extends StatelessWidget {
+  final sc;
+  StationSummary(this.sc);
+
   @override
   Widget build(BuildContext context) {
     return Column(

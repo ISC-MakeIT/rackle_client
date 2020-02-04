@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import './MapPage/pinSummary.dart';
 
 class Panel extends StatelessWidget {
   final body;
@@ -16,7 +15,8 @@ class Panel extends StatelessWidget {
         left: 22,
         right: 22,
       ),
-      panelBuilder: (ScrollController sc) => PinSummary(sc),
+      // panelBuilder: (ScrollController sc) => panel(sc),
+      // panel: panel,
       body: body,
       maxHeight: _panelHeightOpen,
       backdropEnabled: true,

@@ -65,19 +65,22 @@ class PinSummary extends StatelessWidget {
                 return Container(
                   margin: EdgeInsets.only(right: 7),
                   child: ChoiceChip(
-                    label: Text(tagList[index]["name"]),
+                    label: Text(
+                      tagList[index]["name"],
+                      style: TextStyle(),
+                    ),
                     padding: EdgeInsets.all(10),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(),
+                      borderRadius: BorderRadius.circular(3),
                     ),
                     labelStyle: TextStyle(
                       color: Colors.black,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
-                    elevation: 2,
+                    // elevation: 2,
                     selected: tagList[index]["active"],
-                    selectedColor: Color(0xffCAF8E2),
+                    selectedColor: Color(0xff26BD95),
                   ),
                 );
               },

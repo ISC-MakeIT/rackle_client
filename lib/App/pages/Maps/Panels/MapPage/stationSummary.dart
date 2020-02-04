@@ -15,11 +15,7 @@ class StationSummary extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 child: Text(
                   "横浜駅",
-                  style: TextStyle(
-                    color: Color(0xff53514B),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22.62,
-                  ),
+                  style: Theme.of(context).appBarTheme.textTheme.title,
                 ),
               ),
               Container(

@@ -35,10 +35,7 @@ class AddPinInputFoamPanelState extends State<AddPinInputFoamPanel> {
                 ),
                 child: Text(
                   'マイピンの設定',
-                  style: TextStyle(
-                    fontSize: 22.62,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: Theme.of(context).appBarTheme.textTheme.title,
                 ),
               ),
               Container(

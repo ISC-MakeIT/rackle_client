@@ -4,8 +4,21 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../MapView/MapView.dart';
 
-class MapPage extends StatelessWidget {
+class MapPage extends StatefulWidget {
   @override
+  State<MapPage> createState() => MapPageState();
+}
+
+class MapPageState extends State<MapPage> {
+  final List<Marker> markers = [];
+  @override
+  void initState() {
+    super.initState();
+    // server側と通信
+    // modelに突っ込む
+    // markerを更新
+  }
+
   Widget build(BuildContext context) {
     final _panelHeightOpen = MediaQuery.of(context).size.height * .80;
 
@@ -18,6 +31,7 @@ class MapPage extends StatelessWidget {
       body: MapView(
         initialCameraPosition:
             CameraPosition(target: LatLng(35.4655618, 139.6220429), zoom: 18),
+        markers: markers,
       ),
       maxHeight: _panelHeightOpen,
       backdropEnabled: true,

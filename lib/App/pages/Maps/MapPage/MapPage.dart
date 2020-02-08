@@ -51,6 +51,8 @@ class MapPageState extends State<MapPage> {
           top: 45,
           left: 12,
           child: FloatingActionButton(
+            // herotag is necessary to use some FloatingActionButton.
+            heroTag: "back",
             onPressed: () {},
           ),
         ),
@@ -58,6 +60,7 @@ class MapPageState extends State<MapPage> {
           top: 115,
           left: 12,
           child: FloatingActionButton(
+            heroTag: "train",
             onPressed: () {},
           ),
         ),

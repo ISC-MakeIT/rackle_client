@@ -22,23 +22,46 @@ class MapPageState extends State<MapPage> {
   Widget build(BuildContext context) {
     final _panelHeightOpen = MediaQuery.of(context).size.height * .80;
 
-    return SlidingUpPanel(
-      padding: EdgeInsets.only(
-        left: 22,
-        right: 22,
-      ),
-      panelBuilder: (ScrollController sc) => panel(sc),
-      body: MapView(
-        initialCameraPosition:
-            CameraPosition(target: LatLng(35.4655618, 139.6220429), zoom: 18),
-        markers: markers,
-      ),
-      maxHeight: _panelHeightOpen,
-      backdropEnabled: true,
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(15),
-        topRight: Radius.circular(15),
-      ),
+    return Stack(
+      alignment: Alignment.topCenter,
+      children: <Widget>[
+        SlidingUpPanel(
+          padding: EdgeInsets.only(
+            left: 22,
+            right: 22,
+          ),
+          panelBuilder: (ScrollController sc) => panel(sc),
+          body: Container(
+            margin: EdgeInsets.only(
+                bottom: MediaQuery.of(context).size.height * .20),
+            child: MapView(
+              initialCameraPosition: CameraPosition(
+                  target: LatLng(35.4655618, 139.6220429), zoom: 18),
+              markers: markers,
+            ),
+          ),
+          maxHeight: _panelHeightOpen,
+          backdropEnabled: true,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(15),
+            topRight: Radius.circular(15),
+          ),
+        ),
+        Positioned(
+          top: 45,
+          left: 12,
+          child: FloatingActionButton(
+            onPressed: () {},
+          ),
+        ),
+        Positioned(
+          top: 115,
+          left: 12,
+          child: FloatingActionButton(
+            onPressed: () {},
+          ),
+        ),
+      ],
     );
   }
 

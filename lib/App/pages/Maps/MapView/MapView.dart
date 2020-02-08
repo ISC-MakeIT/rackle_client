@@ -20,8 +20,8 @@ class MapView extends StatelessWidget {
     return GoogleMap(
       mapType: MapType.normal,
       initialCameraPosition: initialCameraPosition,
-      myLocationEnabled: true,
-      myLocationButtonEnabled: true,
+      myLocationEnabled: false,
+      myLocationButtonEnabled: false,
       onMapCreated: (GoogleMapController controller) {
         _controller.complete(controller);
       },

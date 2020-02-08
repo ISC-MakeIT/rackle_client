@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rackle_client/App/pages/Maps/Panels/MapPage/stationSummary.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class Panel extends StatelessWidget {
@@ -15,8 +16,7 @@ class Panel extends StatelessWidget {
         left: 22,
         right: 22,
       ),
-      // panelBuilder: (ScrollController sc) => panel(sc),
-      // panel: panel,
+      panelBuilder: (ScrollController sc) => panel(sc),
       body: body,
       maxHeight: _panelHeightOpen,
       backdropEnabled: true,
@@ -25,5 +25,9 @@ class Panel extends StatelessWidget {
         topRight: Radius.circular(15),
       ),
     );
+  }
+
+  Widget panel(sc) {
+    return StationSummary(sc);
   }
 }

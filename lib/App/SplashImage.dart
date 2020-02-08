@@ -19,7 +19,7 @@ class SplashImage extends StatelessWidget {
       title: 'らっくる',
       theme: this.theme,
       home: SplashScreen(
-          seconds: 7,
+          seconds: 2,
           navigateAfterSeconds: this.after,
           image: Image.asset(
             'assets/logo_rackle.png',

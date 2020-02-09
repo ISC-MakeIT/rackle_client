@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rackle_client/App/pages/Maps/Panels/MapPage/pinSummary.dart';
 import 'package:rackle_client/App/pages/Maps/Panels/MapPage/stationSummary.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import './components/filterTags.dart';
@@ -55,7 +56,7 @@ class MapPageState extends State<MapPage> {
         Positioned(
           right: 0,
           bottom: MediaQuery.of(context).size.height * .1,
-          left: 12,
+          left: 0,
           child: SizedBox(
             height: 100,
             child: FilterTags(),
@@ -80,6 +81,6 @@ class MapPageState extends State<MapPage> {
 
   Widget panel(sc) {
     // ここでpanelの表示を変える
-    return StationSummary(sc);
+    return PinSummary(sc);
   }
 }

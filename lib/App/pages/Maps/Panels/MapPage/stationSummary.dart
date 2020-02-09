@@ -7,6 +7,7 @@ class StationSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      controller: sc,
       child: Column(
         children: <Widget>[
           Container(
@@ -70,12 +71,6 @@ class StationSummary extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * .35,
             color: Colors.red,
-            child: ListView.builder(
-              itemCount: null,
-              itemBuilder: (BuildContext context, int index) {
-                return null;
-              },
-            ),
           )
         ],
       ),

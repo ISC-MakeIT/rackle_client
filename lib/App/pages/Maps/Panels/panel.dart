@@ -9,8 +9,6 @@ class Panel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _panelHeightOpen = MediaQuery.of(context).size.height * .80;
-
     return SlidingUpPanel(
       padding: EdgeInsets.only(
         left: 22,
@@ -18,7 +16,6 @@ class Panel extends StatelessWidget {
       ),
       panelBuilder: (ScrollController sc) => panel(sc),
       body: body,
-      maxHeight: _panelHeightOpen,
       backdropEnabled: true,
       borderRadius: BorderRadius.only(
         topLeft: Radius.circular(15),

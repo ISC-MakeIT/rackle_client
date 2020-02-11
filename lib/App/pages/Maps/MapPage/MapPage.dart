@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:rackle_client/App/pages/Maps/Panels/MapPage/pinSummary.dart';
-import 'package:rackle_client/App/pages/Maps/Panels/MapPage/stationSummary.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import './components/filterTags.dart';
 
@@ -23,6 +22,7 @@ class MapPageState extends State<MapPage> {
 
   Widget build(BuildContext context) {
     final _panelHeightOpen = MediaQuery.of(context).size.height * .80;
+    final _panelHeightClose = MediaQuery.of(context).size.height * .14;
 
     return Stack(
       // alignment: Alignment.topCenter,
@@ -55,7 +55,7 @@ class MapPageState extends State<MapPage> {
         ),
         Positioned(
           right: 0,
-          bottom: MediaQuery.of(context).size.height * .1,
+          bottom: _panelHeightClose - 20,
           left: 0,
           child: SizedBox(
             height: 100,
@@ -69,6 +69,7 @@ class MapPageState extends State<MapPage> {
           ),
           panelBuilder: (ScrollController sc) => panel(sc),
           maxHeight: _panelHeightOpen,
+          minHeight: _panelHeightClose,
           backdropEnabled: true,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(15),

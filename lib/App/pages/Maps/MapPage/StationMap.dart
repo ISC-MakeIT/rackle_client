@@ -7,6 +7,9 @@ import './components/filterTags.dart';
 import '../MapView/MapView.dart';
 
 class StationMap extends StatefulWidget {
+  final lat;
+  final lng;
+  StationMap({this.lat, this.lng});
   @override
   State<StationMap> createState() => StationMapState();
 }

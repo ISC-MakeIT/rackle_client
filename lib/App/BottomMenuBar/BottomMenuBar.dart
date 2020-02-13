@@ -1,84 +1,73 @@
 import 'package:flutter/material.dart';
+import 'package:rackle_client/App/BottomMenuBar/TabItem.dart';
 
-class BottomMenuBar extends StatefulWidget {
-  final int menuIndex;
-  final Function navigationHandler;
+const tabTitle = <TabItem, String>{
+  TabItem.map: 'マップ',
+  TabItem.pinsummary: 'ピン一覧',
+  TabItem.notifications: 'お知らせ',
+  TabItem.configurarion: '設定',
+};
+const tabIcon = <TabItem, IconData>{
+  TabItem.map: Icons.map,
+  TabItem.pinsummary: Icons.pin_drop,
+  TabItem.notifications: Icons.notifications,
+  TabItem.configurarion: Icons.settings,
+};
 
-  BottomMenuBar({Key key, this.menuIndex, this.navigationHandler}) : super(key: key);
+class BottomNavigation extends StatelessWidget {
+  const BottomNavigation({
+    Key key,
+    this.currentTab,
+    this.onSelect,
+  }) : super(key: key);
 
-  @override
-  BottomMenuBarState createState() => BottomMenuBarState();
-}
-
-class BottomMenuBarState extends State<BottomMenuBar> {
-  TextStyle _textTheme() => Theme.of(context).textTheme.button;
-  Color _iconColor() => Theme.of(context).iconTheme.color;
-  Color _activeIconColor() => Theme.of(context).accentIconTheme.color;
+  final TabItem currentTab;
+  final ValueChanged<TabItem> onSelect;
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.map,
-              color: Color(0xFFB3BAAB),
-            ),
-            activeIcon: Icon(
-              Icons.map,
-              color: _activeIconColor(),
-            ),
-            title: Text(
-              'マップ',
-              style: _textTheme(),
-            ),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.pin_drop,
-              color: _iconColor(),
-            ),
-            activeIcon: Icon(
-              Icons.pin_drop,
-              color: _activeIconColor(),
-            ),
-            title: Text(
-              'ピン一覧',
-              style: _textTheme(),
-            ),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.notifications,
-              color: _iconColor(),
-            ),
-            activeIcon: Icon(
-              Icons.notifications,
-              color: _activeIconColor(),
-            ),
-            title: Text(
-              'お知らせ',
-              style: _textTheme(),
-            ),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.settings,
-              color: _iconColor(),
-            ),
-            activeIcon: Icon(
-              Icons.settings,
-              color: _activeIconColor(),
-            ),
-            title: Text(
-              '設定',
-              style: _textTheme(),
-            ),
-          ),
-        ],
-        currentIndex: widget.menuIndex,
-        onTap: (index) {
-          widget.navigationHandler(index);
-        });
+      items: <BottomNavigationBarItem>[
+        bottomItem(
+          context,
+          tabItem: TabItem.map,
+        ),
+        bottomItem(
+          context,
+          tabItem: TabItem.pinsummary,
+        ),
+        bottomItem(
+          context,
+          tabItem: TabItem.notifications,
+        ),
+        bottomItem(
+          context,
+          tabItem: TabItem.configurarion,
+        ),
+      ],
+      type: BottomNavigationBarType.fixed,
+      onTap: (index) {
+        onSelect(TabItem.values[index]);
+      },
+    );
+  }
+
+  BottomNavigationBarItem bottomItem(
+    BuildContext context, {
+    TabItem tabItem,
+  }) {
+    final color = currentTab == tabItem ? Colors.blue : Colors.black26;
+    return BottomNavigationBarItem(
+      icon: Icon(
+        tabIcon[tabItem],
+        color: color,
+      ),
+      title: Text(
+        tabTitle[tabItem],
+        style: TextStyle(
+          color: color,
+        ),
+      ),
+    );
   }
 }

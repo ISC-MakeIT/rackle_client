@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:rackle_client/App/BottomMenuBar/TabItem.dart';
-import 'package:rackle_client/App/pages/Maps/MapPage/SelectStation.dart';
 import 'package:rackle_client/App/pages/Maps/MapPage/StationMap.dart';
 import 'package:rackle_client/App/pages/Maps/PinsSummaryPage/PinsSummaryPage.dart';
 import 'package:rackle_client/App/pages/pages.dart';

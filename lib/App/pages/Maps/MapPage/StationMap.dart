@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:rackle_client/App/pages/Maps/Panels/MapPage/pinSummary.dart';
-import 'package:rackle_client/App/pages/Maps/Panels/MapPage/stationSummary.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import './components/filterTags.dart';
 
@@ -9,7 +8,7 @@ import '../MapView/MapView.dart';
 class StationMap extends StatefulWidget {
   final lat;
   final lng;
-  StationMap({this.lat, this.lng});
+  StationMap({Key key, this.lat, this.lng}) : super(key: key);
   @override
   State<StationMap> createState() => StationMapState();
 }
@@ -93,10 +92,6 @@ class StationMapState extends State<StationMap> {
 
   Widget panel(sc) {
     // ここでpanelの表示を変える
-    if (hoge) {
-      return PinSummary(sc);
-    } else {
-      return StationSummary(sc);
-    }
+    return PinSummary(sc: sc);
   }
 }

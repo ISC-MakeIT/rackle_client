@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:rackle_client/App/pages/Maps/MapView/MapView.dart';
 import 'package:rackle_client/App/pages/Maps/Panels/MapPage/pinSummary.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import './components/filterTags.dart';
-
-import '../MapView/MapView.dart';
 
 class StationMap extends StatefulWidget {
   final lat;
@@ -92,6 +91,6 @@ class StationMapState extends State<StationMap> {
 
   Widget panel(sc) {
     // ここでpanelの表示を変える
-    return PinSummary(sc: sc);
+    return PinSummary(sc);
   }
 }

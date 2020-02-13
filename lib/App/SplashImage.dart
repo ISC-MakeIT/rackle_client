@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
-
 import 'package:splashscreen/splashscreen.dart';
-
-import 'BottomMenuBar/BottomMenuBar.dart';
-
-part 'App.dart';
+import 'package:flutter/material.dart';
+import './App.dart';
 
 class SplashImage extends StatelessWidget {
   final Widget after;
@@ -17,10 +13,10 @@ class SplashImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'らっくる',
-      theme: this.theme,
+      theme: theme,
       home: SplashScreen(
           seconds: 2,
-          navigateAfterSeconds: this.after,
+          navigateAfterSeconds: App(),
           image: Image.asset(
             'assets/logo_rackle.png',
           ),

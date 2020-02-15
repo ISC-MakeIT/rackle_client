@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-class SelectStation extends StatelessWidget {
+class SelectStationPanel extends StatelessWidget {
+  final sc;
+  SelectStationPanel({this.sc});
+
   @override
   Widget build(BuildContext context) {
     return Column(

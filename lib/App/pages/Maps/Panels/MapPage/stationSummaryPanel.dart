@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class StationSummary extends StatelessWidget {
+class StationSummaryPanel extends StatelessWidget {
   final sc;
-  StationSummary(this.sc);
+  StationSummaryPanel({this.sc});
 
   @override
   Widget build(BuildContext context) {

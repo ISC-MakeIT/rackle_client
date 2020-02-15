@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class PinSummary extends StatelessWidget {
+class PinSummaryPanel extends StatelessWidget {
   final sc;
 
-  PinSummary(this.sc);
+  PinSummaryPanel(this.sc);
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class StationSummaryPanel extends StatelessWidget {
   final sc;
-  StationSummaryPanel({this.sc});
+  StationSummaryPanel({Key key, this.sc}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

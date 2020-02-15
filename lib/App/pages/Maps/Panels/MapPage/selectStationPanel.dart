@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SelectStationPanel extends StatelessWidget {
   final sc;
-  SelectStationPanel({this.sc});
+  SelectStationPanel({Key key, this.sc}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

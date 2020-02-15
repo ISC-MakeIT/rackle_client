@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class PinSummaryPanel extends StatelessWidget {
   final sc;
 
-  PinSummaryPanel(this.sc);
+  PinSummaryPanel({Key key, this.sc}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

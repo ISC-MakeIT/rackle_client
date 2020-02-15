@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:rackle_client/App/BottomMenuBar/TabItem.dart';
-import 'package:rackle_client/App/pages/Maps/MapPage/StationMap.dart';
 import 'package:rackle_client/App/pages/Maps/PinsSummaryPage/PinsSummaryPage.dart';
 import 'package:rackle_client/App/pages/pages.dart';
 
@@ -19,7 +18,7 @@ class TabNavigator extends StatelessWidget {
   Map<String, Widget Function(BuildContext)> _routerBuilder(
           BuildContext context) =>
       {
-        '/map': (context) => StationMap(),
+        '/map': (context) => SelectStation(),
         '/pinsummary': (context) => PinsSummaryPage(),
         '/notifications': (context) => NotificationsPage(),
         '/configurarion': (context) => ConfigurationPage(),

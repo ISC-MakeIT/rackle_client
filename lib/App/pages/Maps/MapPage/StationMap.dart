@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rackle_client/App/pages/Maps/MapView/MapView.dart';
-import 'package:rackle_client/App/pages/Maps/Panels/MapPage/pinSummaryPanel.dart';
+import 'package:rackle_client/App/pages/Maps/Panels/MapPage/stationSummaryPanel.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import './components/filterTags.dart';
 
@@ -46,13 +46,14 @@ class StationMapState extends State<StationMap> {
           left: 12,
           child: FloatingActionButton(
             // herotag is necessary to use some FloatingActionButton.
+            backgroundColor: Colors.white,
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Theme.of(context).iconTheme.color,
+            ),
             heroTag: "back",
             onPressed: () {
-              setState(
-                () {
-                  Navigator.of(context).pop();
-                },
-              );
+              Navigator.of(context).pop();
             },
           ),
         ),
@@ -60,8 +61,13 @@ class StationMapState extends State<StationMap> {
           top: 115,
           left: 12,
           child: FloatingActionButton(
+            backgroundColor: Color(0xFF26BD95),
             heroTag: "train",
             onPressed: () {},
+            child: Icon(
+              Icons.train,
+              color: Colors.white,
+            ),
           ),
         ),
         Positioned(
@@ -93,6 +99,6 @@ class StationMapState extends State<StationMap> {
 
   Widget panel(sc) {
     // ここでpanelの表示を変える
-    return PinSummaryPanel(sc: sc);
+    return StationSummaryPanel(sc: sc);
   }
 }

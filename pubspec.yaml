@@ -19,7 +19,7 @@ environment:
 dependencies:
   location: ^2.3.5
   google_maps_flutter: ^0.5.21+15
-  sliding_up_panel: ^0.3.6
+  sliding_up_panel: ^1.0.0
   http:
   flutter:
     sdk: flutter

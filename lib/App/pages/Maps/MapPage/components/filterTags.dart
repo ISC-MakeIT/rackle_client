@@ -7,7 +7,7 @@ class FilterTags extends StatelessWidget {
       {
         "name": "マイピン",
         "avatar": "",
-        "isSelected": false,
+        "isSelected": true,
       },
       {
         "name": "エレベータ",
@@ -47,7 +47,7 @@ class FilterTags extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
               elevation: 2,
-              selected: false,
+              selected: tagList[index]["isSelected"],
               selectedColor: Color(0xffCAF8E2),
             ),
           );

@@ -8,10 +8,6 @@ void main() {
   String skipMessage = 'environment values isn`t set';
   dynamic shouldSkip = env['URL'] == null ? skipMessage : false;
   test('APIClient request method', () async {
-    final api = RackleClient(
-      url: env['URL'],
-    );
-
     final stations = await api.getStations();
     final spot = await api.getSpot();
     final news = await api.getNews();

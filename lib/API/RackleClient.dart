@@ -2,16 +2,17 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:meta/meta.dart';
 
 import 'package:rackle_client/Models/models.dart';
 
 final _env = Platform.environment;
 
-class RackleClient {
-  String url = _env['URL'];
+class _RackleClient {
+  String url;
 
-  RackleClient({
-    this.url,
+  _RackleClient({
+    @required this.url,
   });
 
   Future<List<Stations>> getStations() async {
@@ -62,3 +63,5 @@ class RackleClient {
   }) =>
       Uri.http(this.url, path, queryParameters);
 }
+
+final api = _RackleClient(url: _env['URL']);

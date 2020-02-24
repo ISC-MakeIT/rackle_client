@@ -4,7 +4,7 @@ import 'NewsListItem.dart';
 import 'Article/Article.dart';
 
 class NewsListViewer extends StatelessWidget {
-  final List<Map<String, String>> newsList;
+  final List newsList;
 
   NewsListViewer({Key key, this.newsList}) : super(key: key);
 

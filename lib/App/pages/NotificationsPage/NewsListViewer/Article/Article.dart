@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Article extends StatelessWidget {
-  final Map<String, String> news;
+  final news;
 
   Article({Key key, this.news}) : super(key: key);
 
@@ -10,7 +10,7 @@ class Article extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          news['title'],
+          news.title,
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),
@@ -45,7 +45,7 @@ class Article extends StatelessWidget {
                 ),
               ),
               Text(
-                news['created_at'],
+                news.createdAt,
                 style: TextStyle(
                   fontSize: 16, 
                   color: Color(0xFFB3BAAB)
@@ -60,7 +60,7 @@ class Article extends StatelessWidget {
           ),
           Container(
             width: MediaQuery.of(context).size.width - 19 * 2,
-            child: Text(news['body'],
+            child: Text(news.body,
               style: TextStyle(
                 fontSize: 20,
               ),

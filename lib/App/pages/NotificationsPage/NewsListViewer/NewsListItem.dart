@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'NewArrivalMark/NewArrivalMark.dart';
 
 class NewsListItem extends StatelessWidget {
-  final Map<String, String> news;
+  final news;
 
   NewsListItem({Key key, this.news}) : super(key: key);
 
@@ -11,7 +11,7 @@ class NewsListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> newsTitle = [
       Text(
-        news['title'],
+        news.title,
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 16,
@@ -19,7 +19,7 @@ class NewsListItem extends StatelessWidget {
       ),
     ];
 
-    if (news['id'] == '1') {
+    if (news.id == 1) {
       newsTitle.add(NewArrivalMark());
     }
 
@@ -40,7 +40,7 @@ class NewsListItem extends StatelessWidget {
           padding: EdgeInsets.only(left: 8),
         ),
         Text(
-          news['created_at'],
+          news.createdAt,
           style: TextStyle(fontSize: 11.32),
         ),
       ]),
